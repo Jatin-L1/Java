@@ -1,5 +1,5 @@
-
- body {
+/* Global styles */
+body {
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #f7f5f2, #e2e1e0);
     margin: 0;
@@ -151,7 +151,7 @@ h1, h6 {
     }
 }
 
-/* Scrolling */
+/* Content wrapper styles */
 .content-wrapper {
     padding-top: 80px;
     text-align: center;
@@ -237,7 +237,7 @@ h1, h6 {
     transform: translateY(0);
 }
 
-/* Secure  */
+/* Secure chat section styles */
 .secure-chat-section {
     display: flex;
     justify-content: center;
@@ -403,7 +403,7 @@ h1, h6 {
     }
 }
 
-/* Email- Section */
+/* Email sync section styles */
 .email-sync-section {
     display: flex;
     justify-content: center;
@@ -559,5 +559,183 @@ h1, h6 {
     .email-sync-image {
         margin-right: 0;
         margin-bottom: 30px;
+    }
+}
+
+/* Second page specific styles */
+#container_two {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.text-section h2 {
+    color: #BB86FC;
+    font-size: 1.5rem;
+}
+
+.text-section p {
+    color: #03DAC6;
+    font-size: 1rem;
+}
+
+.animation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phone {
+    width: 240px;
+    height: 450px;
+    background-color: #2E2E2E;
+    border-radius: 40px;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4),
+                0 0 15px 3px rgba(0, 150, 255, 0.3); /* Lighter shadow and glow */
+    overflow: hidden;
+    border: 2px solid #444;
+}
+
+.phone::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 7px;
+    background-color: #666;
+    border-radius: 10px;
+}
+
+.phone::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #1E1E1E;
+    border-radius: 50%;
+    border: 3px solid #333;
+}
+
+.camera-notch {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 10px;
+    background-color: #222;
+    border-radius: 0 0 10px 10px;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background-color: #2A2A2A; /* Lighter background inside the phone */
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#message {
+    width: 180px;
+    height: 50px;
+    background-color: #3C3C3C;
+    border-radius: 10px;
+    position: absolute;
+    padding: 10px;
+    color: #9E9E9E;
+    filter: blur(2px); /* Slightly blurred text */
+}
+
+.message1 {
+    bottom: 180px;
+    left: 10px;
+    text-align: left;
+    background-color: #5E5E5E;
+}
+
+.message2 {
+    bottom: 130px;
+    right: 10px;
+    text-align: right;
+    background-color: #4A4A4A;
+}
+
+.message3 {
+    bottom: 80px;
+    left: 10px;
+    text-align: left;
+    background-color: #5E5E5E;
+}
+
+.message4 {
+    bottom: 30px;
+    right: 10px;
+    text-align: right;
+    background-color: #4A4A4A;
+}
+
+.shields {
+    position: relative;
+    width: 240px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.shield {
+    color: #03A9F4; /* Blue color for shields */
+    font-size: 25px;
+    animation: rise 4s infinite;
+    margin: 5px;
+}
+
+.shield1 { animation-delay: 0s; }
+.shield2 { animation-delay: 0.5s; }
+.shield3 { animation-delay: 1s; }
+.shield4 { animation-delay: 1.5s; }
+.shield5 { animation-delay: 2s; }
+.shield6 { animation-delay: 2.5s; }
+.shield7 { animation-delay: 3s; }
+.shield8 { animation-delay: 3.5s; }
+.shield9 { animation-delay: 4s; }
+.shield10 { animation-delay: 4.5s; }
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1; /* Keep opacity full until 70% of the animation */
+    }
+    100% {
+        transform: translateY(-350px); /* Increased height */
+        opacity: 0;
     }
 }
