@@ -113,7 +113,7 @@ body {
     position: absolute;
     padding: 10px;
     color: #9E9E9E;
-    filter: blur(2px); /* Slightly blurred text */
+    filter: blur(4.5px); /* Slightly blurred text */
 }
 
 .message1 {

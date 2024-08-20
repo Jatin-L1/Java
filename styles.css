@@ -16,6 +16,7 @@ h1, h6 {
 /* Navbar styles */
 .navbar-dark {
     background-color: #1F2937;
+    /* background-color:#1974D2; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -168,13 +169,13 @@ h1, h6 {
     text-align: center;
 }
 
-.message {
+.message_1 {
     z-index: 10;
     position: relative;
     transform: translateY(-50%);
 }
 
-.message h1 {
+.message_1 h1 {
     font-size: 3rem;
     color: #222;
     margin: 0;
@@ -183,7 +184,7 @@ h1, h6 {
     margin-bottom: 20px;
 }
 
-.message p {
+.message_1 p {
     font-size: 1.5rem;
     color: #444;
     margin: 20px 0 0;
@@ -563,34 +564,40 @@ h1, h6 {
 }
 
 /* Second page specific styles */
-#container_two {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #1E1E1E;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.container_two {
+    width: 100%;
+    /* margin: 0 auto; */
+    margin-top: 0px;
+    padding: 10px;
+    padding-bottom: 30px;
+    /* border-radius: 10px; */
+    background-color: #0d1117;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
 }
 
 #content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    margin-top: 100px;
 }
 
 .text-section {
     flex: 1;
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    margin-left: 220px;
+    margin-top: -60px;
 }
 
 .text-section h2 {
-    color: #BB86FC;
-    font-size: 1.5rem;
+    color: #d4e0f0;
+    font-size: 3rem;
+    font-weight: 800;
 }
 
 .text-section p {
-    color: #03DAC6;
-    font-size: 1rem;
+    color: #467cc6;
+    font-size: 1.25rem;
 }
 
 .animation {
@@ -598,6 +605,7 @@ h1, h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 140px;
 }
 
 .phone {
@@ -658,7 +666,7 @@ h1, h6 {
     overflow: hidden;
 }
 
-#message {
+.message {
     width: 180px;
     height: 50px;
     background-color: #3C3C3C;
@@ -666,7 +674,9 @@ h1, h6 {
     position: absolute;
     padding: 10px;
     color: #9E9E9E;
-    filter: blur(2px); /* Slightly blurred text */
+    font-weight: 800;
+    font-size: 0.7rem;
+    filter: blur(3px);
 }
 
 .message1 {
