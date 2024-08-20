@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins','Montserrat', sans-serif;
     background: linear-gradient(135deg, #f7f5f2, #e2e1e0);
     margin: 0;
     padding: 0;
@@ -12,8 +12,7 @@ body {
 h1, h6 {
     font-weight: 700;
 }
-
-/* Navbar styles */
+/* Updated Navbar styles */
 .navbar-dark {
     background-color: #1F2937;
     /* background-color:#1974D2; */
@@ -22,7 +21,9 @@ h1, h6 {
 
 .navbar-brand {
     color: #E5E7EB;
-    font-size: 1.8rem;
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    letter-spacing: 1px;
 }
 
 .navbar-nav .nav-link {
@@ -31,6 +32,9 @@ h1, h6 {
     display: inline-flex;
     align-items: center;
     transition: color 0.3s ease;
+    font-size: 1rem; 
+    font-weight: 500; 
+    letter-spacing: 0.5px; 
 }
 
 .navbar-nav .nav-link::after {
@@ -788,3 +792,32 @@ h1, h6 {
     margin-top: 20px;
     font-size: 14px;
 }
+
+
+
+/* Gradient Text Effect for Headings */
+.gradient-text {
+    background: linear-gradient(90deg, #2F81F7, #03DAC6, #BB86FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700; /* Bold font to match the website's modern theme */
+    font-size: 3rem; /* Adjust size as needed */
+    line-height: 1.2;
+    margin-bottom: 20px; /* Add some space below the heading */
+    text-align: center; /* Center align the text */
+}
+
+/* Adjustments for different screen sizes */
+@media (max-width: 992px) {
+    .gradient-text {
+        font-size: 2.5rem; /* Slightly smaller on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .gradient-text {
+        font-size: 2rem; /* Smaller font on mobile devices */
+    }
+}
+
+
