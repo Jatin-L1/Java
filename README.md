@@ -18,7 +18,6 @@
     <li><a href="#installation-and-setup">Installation and Setup</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -85,9 +84,6 @@
 
 <h2 id="contributing">Contributing</h2>
 <p>This is a private repository, and contributions are currently not open to the public. However, feedback and suggestions are always welcome.</p>
-
-<h2 id="license">License</h2>
-<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
 <h2 id="contact">Contact</h2>
 <p>If you have any questions or suggestions, you can reach out to me:</p>
