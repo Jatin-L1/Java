@@ -17,7 +17,7 @@ public class InversionCount {
                 i++;
             }
             else{
-                count += (a.length -i); //condition added to count becase in else a[i]>b[j];
+                // count += (a.length -i); //condition added to count becase in else a[i]>b[j];
                 c[k] = b[j];
                 j++;
                 k++;
@@ -39,18 +39,18 @@ public class InversionCount {
             }
         }
     }
-    // public static void inversion(int[] a , int[] b){
-    //     int i =0 , j=0;
-    //     while(i<a.length && j<b.length){
-    //         if(a[i]>b[j]){
-    //             count += (a.length -i);
-    //             j++;
-    //         }
-    //         else{
-    //             i++;
-    //         }
-    //     }
-    // }
+    public static void inversion(int[] a , int[] b){
+        int i =0 , j=0;
+        while(i<a.length && j<b.length){
+            if(a[i]>b[j]){
+                count += (a.length -i);
+                j++;
+            }
+            else{
+                i++;
+            }
+        }
+    }
     public static void mergesort(int[] arr){
         int n = arr.length;
         if(n==1) return; //base case
@@ -70,7 +70,7 @@ public class InversionCount {
         //magic
         mergesort(a);
         mergesort(b);
-        // inversion(a,b);
+        inversion(a,b);
 
         //merege these 'a' and 'b'
         merge(a,b,arr);
