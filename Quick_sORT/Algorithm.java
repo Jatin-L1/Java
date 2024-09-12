@@ -1,4 +1,4 @@
-package Quick_sORT;
+package Quick_SORT;
 
 public class Algorithm {
     public static void print(int[] arr){
