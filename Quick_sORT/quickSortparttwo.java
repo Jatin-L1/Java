@@ -52,7 +52,7 @@ public class quickSortparttwo {
     }
     public static void main(String[] args) {
         int[] arr = {4,9,7,1,2,3,6};
-        int k = 6;
+        int k = 4;
         System.out.println(quicksort(arr , k , 0, arr.length-1));
     }
 
