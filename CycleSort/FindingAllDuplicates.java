@@ -28,9 +28,6 @@ public class FindingAllDuplicates {
         return ans;
         
     }
-    
-
-
     public static void main(String[] args) {
         int[] arr = {1};
         ans = new ArrayList<>();

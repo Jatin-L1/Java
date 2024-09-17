@@ -7,8 +7,6 @@ public class QuickSort {
         }
         
     }
-
-
     public static int  partition(int[] arr, int lo, int hi) {
         int pivot = arr[lo] , pivotIndex = lo;
         int smallerCount = 0;
@@ -53,7 +51,7 @@ public class QuickSort {
 
 
     public static void main(String[] args) {
-        int[] arr ={3,8,6,7,5,9,10};
+        int[] arr ={10,9,8,7,6,5,4,3,2,1};
         print(arr);
         System.out.println();
         quicksort(arr, 0 , arr.length-1);

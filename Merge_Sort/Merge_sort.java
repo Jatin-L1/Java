@@ -1,7 +1,4 @@
 package Merge_Sort;
-
-import Strings.infiniteloop;
-
 public class Merge_sort {
     public static void print(int[] arr){
         for(int ele : arr){
