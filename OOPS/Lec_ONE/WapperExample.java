@@ -50,6 +50,12 @@ public class WapperExample {
         } // by having the finialize function in class a whenever any object of class a is freed from the memory this function is called Garbage collector. 
 
 
+
+
+
+        /*  overiding depends on objects and static dosent depend on objects hence you can not overide
+        static but you can inherit them */
+
         
     }
     
