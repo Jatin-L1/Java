@@ -1,6 +1,12 @@
 package Linked_List;
-
-class SLL{
+class Node{
+    int val;
+    Node next; // Yeh agli node ka reference hai 
+    public Node(int val) {
+        this.val = val;
+    }
+}
+ class SLL{
     //user  defined data structure
     private Node head;
     private Node tail;
@@ -55,7 +61,7 @@ class SLL{
             System.out.println("Invalid Index");
             return;
         }
-
+    
         Node temp = new Node(val);
         Node x = head;
         for(int i =1;i<=idx-1;i++){
@@ -78,7 +84,7 @@ class SLL{
             x = x.next;
             if(i==idx) System.out.println(x.val);
         }
-
+    
     }
     void set(int idx , int val){
         // if(idx==size-1){
@@ -92,7 +98,7 @@ class SLL{
             x = x.next;
         }
         x.val  =val;
-
+    
     }
     void deleteAtHead() throws Error{
         if(head==null) throw new Error("List is null");
@@ -135,9 +141,9 @@ class SLL{
         }
         temp.next = temp.next.next; // ye deletion hain
         size--;
+
     }
 }
-
 public class implementationLL {
     public static void main(String[] args) {
         SLL list = new SLL();
@@ -147,7 +153,6 @@ public class implementationLL {
         list.insertAtTail(30);
         list.size();
         list.display();
-
         list.insertAtHead(133);
         list.display();
         list.insert(2, 100);

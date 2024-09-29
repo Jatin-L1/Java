@@ -35,9 +35,11 @@ public class ListNodeClass {
         b.next = c; // 10->20->30 
         c.next = d; // 10->20->30->40
         d.next = e; // 10->20->30->40->50
+        // System.out.println(a.val);
+        // System.out.println(a.next);
 
         
-        print(a);
+        // print(a);
         // for(int i =1;temp !=null;i++){
         //     System.out.println(temp.val);
         //     temp = temp.next;
@@ -46,11 +48,11 @@ public class ListNodeClass {
         
 
 
-        // System.out.println(a.val);
-        // System.out.println(a.next.val);
-        // System.out.println(a.next.next.val);
-        // System.out.println(a.next.next.next.val);
-        // System.out.println(a.next.next.next.next.val);
+        System.out.println(a.val);
+        System.out.println(a.next.val);
+        System.out.println(a.next.next.val);
+        System.out.println(a.next.next.next.val);
+        System.out.println(a.next.next.next.next.val);
 
     }
     

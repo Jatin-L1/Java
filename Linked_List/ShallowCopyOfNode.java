@@ -1,5 +1,4 @@
 package Linked_List;
-
 public class ShallowCopyOfNode {
     public static void main(String[] args) {
         Node a = new Node(100);
