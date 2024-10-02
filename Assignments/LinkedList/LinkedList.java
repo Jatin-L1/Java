@@ -1,4 +1,7 @@
 package Assignments.LinkedList;
+
+import java.util.ArrayList;
+
 class Node{
     int val;
     Node next;
@@ -6,6 +9,13 @@ class Node{
        this.val = val; 
     }
 }
+class ListNode {
+         int val;
+         ListNode next;
+         ListNode() {}
+         ListNode(int val) { this.val = val; }
+         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     }
 class SLL{
     public Node head;
     private Node tail;
@@ -169,51 +179,229 @@ class SLL{
             a.next = dummy.next;
         return head;
     }
+    public boolean palindrome(Node head){
+        int length = 0;
+        Node temp  = head;
+        while(temp!=null){
+           temp = temp.next;
+            length++;
+        }
+        temp = head;
+        Node a = head;
+        Node b = head;
+        while(temp!=null){
+            for(int i=0;i<length+length/2;i++){
+                temp = temp.next;
+                b = b.next;
+            }
+            Node prev = null;
+            Node Next = head;
+            while(temp!=null){
+            Next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = Next;
+        }
+        while(b!=null){
+            if(a.val!=b.val) return false;
+            a = a.next;
+            b = b.next;
+        }
+
+        }
+        return true;
+
+    }
+    public void deleteNode(ListNode node){
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+    public ListNode middleRight(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public ListNode middleLeft(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public ListNode middleRightDelete(ListNode head , ListNode node){
+        if(head==null || head.next==null) return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        slow.val = slow.next.val;
+        slow.next = slow.next.next;
+        return head;
+    }
+    public ListNode DeleteNode(ListNode head , int k ){
+        if(head==null || head.next==null) return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        // for(int i =0;i<k;i++){
+        //     fast = fast.next;
+        // }
+        int i =0;
+        while(i<k){
+            fast = fast.next;
+            i++;
+        }
+        while (fast!=null) {
+            slow = slow.next;
+            fast  = fast.next.next;
+        }
+        slow.val = slow.next.val;
+        slow.next = slow.next.next;
+        return head;
+    }
+    public ListNode SwappingNode(ListNode head , int k){
+        ListNode slow = head;
+        ListNode fast = head;
+        // for(int i =0;i<k;i++){
+        //     fast = fast.next;
+        // }
+        int i =0;
+        while(i<k){
+            fast = fast.next;
+            i++;
+        }
+        while (fast!=null) {
+            slow = slow.next;
+            fast  = fast.next.next;
+        }
+        ListNode x = head;
+        for(i=0;i<k;i++){
+            x = x.next;
+        }
+        int temp = x.val;
+        x.val = slow.val;
+        slow.val = temp;
+        return head;
+    }
+    public ListNode intersection(ListNode headA , ListNode headB){
+        ListNode a = headA;
+        ListNode b = headB;
+        int lenA = 0;
+        int lenB = 0;
+        while (a!=null) {
+            a = a.next;
+            lenA++;
+        }
+        while (b!=null) {
+            b = b.next;
+            lenB++;
+        }
+        a = headA;
+        b= headB;
+        if(lenA>lenB){
+            for(int i =0;i<lenA-lenB;i++){
+                a = a.next;
+            }
+        }
+        else{
+            for(int i =0;i<lenB-lenA;i++){
+                b =b.next;
+            }
+        }
+        while (b!=null) {
+            if(b.val==a.val) return b;
+            else{
+                b= b.next;
+                a =a.next;
+            }
+        }
+        
+        return headA;
+    }
+    public boolean linkedListCycle(ListNode head){
+        ListNode slow =head;
+        ListNode fast = slow;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast) return true;
+        }
+        return false;
+    }
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode a = head;
+        ListNode b = head;
+        ListNode c = head;
+        ListNode d = head;
+        int lenA = 0;
+        int lend = 0;
+        while(b.val!=left){
+            b = b.next;
+            lenA++;
+        }
+        while(c.val!=right){
+            c = c.next;
+            lend++;
+        }
+        for(int i=1;i<lenA;i++){
+            a = a.next;
+        }
+        for(int i =0;i<=lend;i++){
+            d=d.next;
+        }
+        System.out.println(a.val);
+        System.out.println(b.val);
+        System.out.println(c.val);
+        System.out.println(d.val);
+
+        a.next = null;
+        c.next = null;
+        reversList(b);
+        a.next  =c;
+        b.next = d;
+        return head;
+    }
 }
+
+
+
+
 
 public class LinkedList {
     public static void main(String[] args){
         SLL list = new SLL();
-        //  Node a = new Node(10);
-        //  Node b = new Node(20);
-        // System.out.println(a.val);
-        // System.out.println(a);
-        // System.out.println(a.next);
-        
-        // a.next = b;
-        // System.out.println(a.next);
-        // System.out.println(a.next.val +"="+b.val);
-    //   list.insertAtEnd(10);
-    //   list.insertAtEnd(20);
-    //   list.insertAtEnd(30);
-    //   list.insertAtEnd(40);
-    //   list.display();
-    //   list.insertAtHead(56);
-    //   list.display();
-    //   list.insert(3,69);
-    //   list.display();
-    //   list.get(4);
-    //   list.Size();
-    //   list.deleteAtTail();
-    //   list.display();
-    //   list.deleteAtHead();
-    //   list.display();
-        // list.deleteAtIndex(3);
-        list.insertAtEnd(1);
-        list.insertAtEnd(4);
-        list.insertAtEnd(3);
-        list.insertAtEnd(2);
-        list.insertAtEnd(5);
-        list.insertAtEnd(2);
-        // list.deleteDuplicates_All(list.head);
-        list.display();
-        list.partition(list.head , 3);
-        list.display();
-       
-       
-       
-        
-        
+        list.insertAtEnd(10);
+        list.insertAtEnd(20);
+        list.insertAtEnd(30);
+        list.insertAtEnd(40);
+        list.insertAtEnd(50);
+        list.insertAtEnd(60);
+        list.insertAtEnd(70);
+        list.insertAtEnd(80);
+        list.reverseBetween(10, 30, 60);
+    }
+
+    static ArrayList<Integer> list = new ArrayList<>();
+    private static boolean happyNumber(int n, int re) {
+        if(list.contains(n)) return false;
+        list.add(n);
+        re = 0;
+        while(n!=0){
+            re +=(n%10)*(n%10);
+            n /=10;
+        }
+        if(re==1){
+            return true;
+        }
+        System.out.println(list);
+        return happyNumber(re, 0);
     }
     
-}  
+}
