@@ -368,11 +368,20 @@ class SLL{
         b.next = d;
         return head;
     }
+    public ListNode removeaval(ListNode head , int num){
+
+        while(head!=null){
+            if(head.next.val==num){
+                head.next = head.next.next;
+            }
+            head = head.next;
+        }
+        return head;
+
+
+
+    }
 }
-
-
-
-
 
 public class LinkedList {
     public static void main(String[] args){
@@ -385,8 +394,7 @@ public class LinkedList {
         list.insertAtEnd(60);
         list.insertAtEnd(70);
         list.insertAtEnd(80);
-        list.reverseBetween(10, 30, 60);
-    }
+        }
 
     static ArrayList<Integer> list = new ArrayList<>();
     private static boolean happyNumber(int n, int re) {
