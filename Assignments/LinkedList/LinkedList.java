@@ -1,6 +1,7 @@
 package Assignments.LinkedList;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class Node{
     int val;
@@ -363,7 +364,7 @@ class SLL{
 
         a.next = null;
         c.next = null;
-        reversList(b);
+        // reversList(b);
         a.next  =c;
         b.next = d;
         return head;
@@ -381,6 +382,137 @@ class SLL{
 
 
     }
+    public ListNode sortList(ListNode head){
+        if(head==null || head.next== null) return head;
+        ListNode slow = head;
+        ListNode fast = head;
+        ListNode firstHalf = head;
+        while(fast!=null && fast.next!=null && fast.next.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode secondHalf  = slow.next;
+        firstHalf = sortList(firstHalf);
+        secondHalf = sortList(slow.next);
+        slow.next = null;
+        ListNode ans = mergeSortedList(firstHalf , secondHalf);
+        return ans;
+
+    }
+    public ListNode mergeSortedList(ListNode firstHalf, ListNode secondHalf) {
+        ListNode dummy = new ListNode();
+        ListNode temp = dummy;
+        ListNode temp1 = firstHalf;
+        ListNode temp2 = secondHalf;
+        while(temp1!=null && temp2!=null){
+            if(temp1.val<=temp2.val){
+                temp.next = temp1;
+                temp1 = temp1.next;
+            }
+            else{
+                temp.next = temp2;
+                temp2 = temp2.next;
+            }
+            temp = temp.next;
+        }
+        if(temp1==null) temp.next = temp2;
+        else temp.next = temp1;
+        return dummy.next;
+    }
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists==null) return null;
+
+        ArrayList<ListNode> arr = new ArrayList<>();
+        for(int i =0;i<lists.length;i++){
+            arr.add(lists[i]);
+        }
+        if(arr.size()==1) return arr.get(arr.size());
+        while(arr.size()!=0){
+            ListNode a = arr.remove(arr.size());
+            ListNode b = arr.remove(arr.size()-1);
+            ListNode c = mergeSortedList(a, b);
+            arr.add(c);
+        }
+
+        return arr.get(1);
+    }
+    public ListNode partitonList(ListNode head, int x){
+        if(head==null || head.next==null) return head;
+        ListNode a = new ListNode();
+        ListNode b = new ListNode();
+        ListNode temp1 = a;
+        ListNode temp2 = b;
+        ListNode temp = head;
+        while(temp!=head){
+            if(temp.val<x){
+                temp1.next = temp;
+                temp1 = temp1.next;
+            }
+            else{
+                temp2.next = temp;
+                temp2 = temp2.next;
+            }
+            temp = temp.next;
+        }
+        temp2.next = null;
+        a = a.next;
+        b = b.next;
+        temp1.next = b;
+        if(a==null) return b;
+        return a;
+    }
+    public ListNode reverseList(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode Next = null;
+        while(curr!=null){
+            Next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = Next;
+            
+        }
+        return prev;
+    }
+    public boolean palindrome ( ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode j = reverseList(slow);
+        ListNode i = head;
+        while(j!=null){
+            if(i.val!=j.val) return false;
+            i= i.next;
+            j = j.next;
+        }
+        return true;
+    }
+    public int pairSum(ListNode head) {
+        ListNode temp = head;
+        int n = 0;
+        while(temp!=null){
+            temp = temp.next;
+            n++;
+        }
+        ListNode a = head;
+        int max = Integer.MIN_VALUE;
+        for(int i =0;i<=n/2-1;i++){
+            ListNode b = a;
+            for(int j =i;j<=n-i-1;j++){
+                b = b.next;
+            }
+            int sum =  a.val + b.val;
+            if(sum<max){
+                max = sum;
+            }
+            a =a.next;
+        }
+        return max;
+        
+    }
 }
 
 public class LinkedList {
@@ -394,7 +526,11 @@ public class LinkedList {
         list.insertAtEnd(60);
         list.insertAtEnd(70);
         list.insertAtEnd(80);
+        list.display();
+
+
         }
+        
 
     static ArrayList<Integer> list = new ArrayList<>();
     private static boolean happyNumber(int n, int re) {
