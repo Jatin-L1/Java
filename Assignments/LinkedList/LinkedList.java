@@ -3,6 +3,8 @@ package Assignments.LinkedList;
 import java.util.ArrayList;
 import java.util.List;
 
+import Assignments.Strings.maximuninstring;
+
 class Node{
     int val;
     Node next;
@@ -512,6 +514,138 @@ class SLL{
         }
         return max;
         
+    }
+    public ListNode reverseList2(ListNode head , int left , int right){
+        ListNode a = null , b= null , c = null , d = null;
+        ListNode temp = head;
+        int len = 0;
+        while(temp!=null){
+            if(len==left-1) a = temp;
+            if(len==left) b = temp;
+            if(len==right) c = temp;
+            if(len==right+1) d = temp;
+            temp = temp.next;
+            len++;
+        }
+        if(a!=null) a.next = null;
+        if(c!=null) c.next = null;
+        reverseList(b);
+        if(a!=null) a.next = c;
+        b.next = d;
+        if(a==null) return c;
+        return head;
+    }
+    public ListNode reorderList(ListNode head){
+        ListNode a = head;
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast!=null && fast.next!=null){
+            slow= slow.next;
+            fast = fast.next.next;
+        }
+        ListNode b = reverseList(slow.next);
+        slow.next = null;
+        ListNode dummy = new ListNode();
+        ListNode temp = dummy;
+        while(a!=null){
+            temp.next = a;
+            a=a.next;
+            temp = temp.next;
+            temp.next = b;
+            b = b.next;
+        }
+        if(b==null) temp.next = a;
+        return head;
+    }
+    public ListNode addtwoNumber(ListNode t1 , ListNode t2){
+        ListNode dummy = new ListNode();
+        ListNode temp = dummy;
+        int carry =0;
+        while(t1!=null || t2!=null){
+            int val1= 0, val2 = 0;
+            if(t1!=null) val1 = t1.val;
+            if(t2!=null) val2 = t2.val;
+            int num = val1 + val2 + carry;
+            ListNode node = new ListNode(num%10);
+            temp.next = node;
+            temp = temp.next;
+            if(num>9) carry = 1;
+            else carry= 0;
+            if(t1!=null) t1 = t1.next;
+            if(t2!=null) t2 = t2.next;
+        }
+        if(carry==1){
+            ListNode node = new ListNode();
+            temp.next = node;
+            temp = temp.next;
+        }
+        return dummy.next;
+    }
+    public int linkedListSize(ListNode head){
+        int n = 0;
+        while(head!=null){
+            head = head.next;
+            n++;
+        }
+        return n;
+    }
+    public ListNode[] splitListToParts(ListNode head, int k) {
+        int n = linkedListSize(head);
+        int size = n/k;
+        int extra = n%k;
+        ListNode temp = head;
+        ListNode[] arr = new ListNode[k];
+        int idx = 0;
+        int len = 1;
+        while(temp!=null){
+            int s= size;
+            if(extra>0) s++;
+            if(len==1) arr[idx++] = temp;
+            if(len==s){
+                ListNode a = temp.next;
+                temp.next = null;
+                temp = a;
+                len = 1;
+                extra--;
+            }
+            else{
+                temp = temp.next;
+                len++;
+            }
+        }
+        return arr;
+    }
+    public int[] nodesBetweenCriticalPoints(ListNode head) {
+        ListNode left = head;
+        ListNode mid = head.next;
+        ListNode right = head.next.next;
+        int first = -1 , last = -1;
+        int[] arr = {-1,-1};
+        int idx = 0;
+        int mindistance = Integer.MAX_VALUE;
+        while (right!=null) {
+            if(mid.val<left.val && mid.val<right.val ||mid.val>left.val && mid.val>right.val){
+                if(first==-1) first = idx;
+                if(last!= -1){
+                    int dis = idx - last;
+                    mindistance = Math.min(mindistance, dis);
+
+                }
+                last = idx;
+            }
+            idx++;
+            left = left.next;
+            mid = mid.next;
+            right = right.next;
+        }
+        if(first==last) return arr;
+        int masDistance = last - first;
+        arr[0] = mindistance;
+        arr[1] = masDistance;
+
+        return arr;
+
+
     }
 }
 
