@@ -13,7 +13,7 @@ public class LinkedListImplementation {
         void push(int x){
             Node temp = new Node(x);
             temp.next = null;
-             head  = temp;
+            head  = temp;
             size++;
 
         }

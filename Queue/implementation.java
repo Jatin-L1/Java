@@ -12,6 +12,7 @@ public class implementation {
         queue.add(5);
         queue.add(19);
         queue.add(1);
+        System.out.println(queue.peek());
 
         Deque<Integer> deque = new ArrayDeque<>();
         deque.add(89);
