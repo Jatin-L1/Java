@@ -45,9 +45,6 @@ public class ListNodeClass {
         //     temp = temp.next;
         // }
         
-        
-
-
         System.out.println(a.val);
         System.out.println(a.next.val);
         System.out.println(a.next.next.val);
