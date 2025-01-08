@@ -1,9 +1,11 @@
 package BinarySearch;
 
+import java.util.Random;
+
 public class lowerbound {
     public static void main(String[] args) {
-        int [] arr = {10,20,30,40,50,60,70,80,90};
-        int target = 50;
+        int[] arr = {1,4,6,7,9,11,15};
+        int target = 7;
         int n = arr.length;
         int lb = n;
         int lo =0 ,hi =n-1;
@@ -16,7 +18,10 @@ public class lowerbound {
             else lo = mid+1;
             
         }     
-        System.out.println(lb);   
+        // System.out.println(lb); 
+        Random random = new Random();
+        int x = random.nextInt();
+        System.out.println(x);  
     }
 
 }
