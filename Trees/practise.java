@@ -1,6 +1,11 @@
 package Trees;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
+
+import Heaps.nearySortedarray.Triplet;
 
 class Node{
     int val;
@@ -11,7 +16,10 @@ class Node{
     } 
 }
 
+
+
 public class practise {
+    
     public static void main(String[] args) {
         Node a = new Node(1);
         Node b = new Node(4);

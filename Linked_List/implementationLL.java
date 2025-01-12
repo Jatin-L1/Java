@@ -173,9 +173,6 @@ public class implementationLL {
         list.display();
         list.size();
         list.delete(3);
-
-
-        
     }
     
 }
