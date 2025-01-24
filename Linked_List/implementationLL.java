@@ -1,4 +1,8 @@
 package Linked_List;
+
+import java.lang.classfile.components.ClassPrinter.ListNode;
+import java.util.LinkedList;
+
 class Node{
     int val;
     Node next; // Yeh agli node ka reference hai 
@@ -143,7 +147,27 @@ class Node{
         size--;
 
     }
-    
+    void deleteValue(int val) throws Error{
+        if(head==null) throw new Error("List is null");
+        if(head.val==val){
+            deleteAtHead();
+            return;
+        }
+        if(tail.val==val){
+            deleteAtTail();
+            return;
+        }   
+        Node temp = head;
+        while(temp.next!=null){
+            if(temp.next.val==val){
+                temp.next = temp.next.next;
+                size--;
+                return;
+            }
+            temp = temp.next;
+        }
+        throw new Error("Value not found");
+    }
 }
 public class implementationLL {
     public static void main(String[] args) {
@@ -175,4 +199,46 @@ public class implementationLL {
         list.delete(3);
     }
     
+    public Node getIntersectionNode(Node headA, Node headB) {
+        int lenA = 0 , lenB = 0;
+        Node tempA = headA;
+        while(tempA!=null){
+            tempA = tempA.next;
+            lenA++;
+        }
+        Node tempB = headB;
+        while(tempB!=null){
+            tempB = tempB.next;
+            lenB++;
+        }
+        tempA = headA;
+        tempB = headB;
+        if(lenA>lenB){
+            for(int i=1;i<=lenA-lenB;i++){
+                    tempA = tempA.next;
+            }
+        }
+        else{
+            for(int i=1;i<=lenB-lenA;i++){
+                    tempB = tempB.next;
+            }
+        }
+        while(tempA!=tempB){
+            tempA = tempA.next;
+            tempB = tempB.next;
+        }
+        return tempA;
+    }
+public Node reverseList(Node head) {
+    Node tempA = null;
+    Node current = head;
+    Node tempB = null;
+    while (current != null) {
+        tempB = current.next;
+        current.next = tempA;
+        tempA = current;
+        current = tempB;
+    }
+    return tempA;
+}
 }
