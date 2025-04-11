@@ -34,7 +34,7 @@ public class customComparator {
     public static void main(String[] args) {
         Student[] s = new Student[4];
         s[0] = new Student(2026, 8.88, "Jatin");
-        s[1] = new Student(2052, 7.5, "Radhu");
+        s[1] = new Student(2052, 7.5, "Sambhav");
         s[2] = new Student(2017, 8, "Ishaan");
         s[3] = new Student(0746, 7.8, "Aadi");
         print(s);

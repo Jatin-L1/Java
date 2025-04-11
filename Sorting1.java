@@ -27,6 +27,5 @@ public class Sorting1 {
         for(int ele: ans){
             System.out.print(ele+" ");
         }
-
     }
 }

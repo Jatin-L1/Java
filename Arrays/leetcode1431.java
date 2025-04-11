@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class leetcode1431 {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {

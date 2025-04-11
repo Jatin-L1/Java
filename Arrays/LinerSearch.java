@@ -1,4 +1,4 @@
-package Arrays;
+import java.util.*;
 import java.util.Scanner;
 public class LinerSearch {
     public static void main(String[] args) {
@@ -14,21 +14,24 @@ public class LinerSearch {
             arr[i] = sc.nextInt();
           
         }
-        boolean flag = false;
-        int j =0;
-        for(int i=0;i<a;i++){
-            if (arr[i]==n) {
-                j=i;
-                flag = true;
-                break;
-            }
-        }
-        if (flag==true) {
-            System.out.println("Element Found at"+ j);
-        }
-        else{
-            System.out.println("Elemewnt not found");
-        }
+        // boolean flag = false;
+        // int j =0;
+        // for(int i=0;i<a;i++){
+        //     if (arr[i]==n) {
+        //         j=i;
+        //         flag = true;
+        //         break;
+        //     }
+        // }
+        // if (flag==true) {
+        //     System.out.println("Element Found at"+ j);
+        // }
+        // else{
+        //     System.out.println("Elemewnt not found");
+        // }
+
+        Arrays.binarySearch(arr, 3);
+        System.out.println("Element found at index: " + Arrays.binarySearch(arr, 3));
         sc.close();
     }
 }

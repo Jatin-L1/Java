@@ -1,4 +1,4 @@
-package Arrays;
+import java.util.*;
 
 import java.util.Scanner;
 public class Sortarray0n1 {
