@@ -1,0 +1,10 @@
+=== Hotel Invoice ===
+Customer: Jatin Sharma
+Phone: 8284941698
+Date: 2025-04-21T22:24:02.458316700
+
+=== Charges ===
+Food Order:
+ - Pizza: $15.00
+
+Total: $15.00

@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "HotelManagementSystem",
+            "request": "launch",
+            "mainClass": "HotelManagementSystem",
+            "projectName": "project_b6eaf81e"
+        },
+        {
+            "type": "java",
+            "name": "Hotel",
+            "request": "launch",
+            "mainClass": "Hotel",
+            "projectName": "project_b6eaf81e"
+        },
+        {
+            "type": "java",
+            "name": "TestFX",
+            "request": "launch",
+            "mainClass": "TestFX",
+            "projectName": "project_b6eaf81e"
+        },
+        {
+            "type": "java",
+            "name": "Launch HotelManagementGUI",
+            "request": "launch",
+            "mainClass": "HotelManagementGUI",
+            "vmArgs": "--module-path \"C:\\Program Files\\javafx-sdk-24.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
