@@ -4,8 +4,13 @@ import java.util.Arrays;
 
 public class ImplementationUsingArray {
     public static class ST{
-       private int[] arr = new int[5];
+       private int[] arr;
        private int idx = 0;
+
+       public ST(int size) {
+           arr = new int[size];
+       }
+
        void push(int x) {
             if(isFull()){
                 System.out.println("Stack is full");
@@ -119,7 +124,7 @@ public class ImplementationUsingArray {
         st.push(4);
         st.peek();
         System.out.println(st);
-        System.out.println(st.pop());
+        st.pop();
 
         // upar wale main array full hogya hum ab dyanamic array use karenge
         // array ka size double karenge

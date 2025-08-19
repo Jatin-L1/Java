@@ -1,9 +1,7 @@
-package Strings;
-
 public class stringcompression {
     public static void main(String[] args) {
         
-        String s = "aaaaggggeeeuuuhhhiijl";
+        String s = "AAAABBBCCCD";
         char[] arr = s.toCharArray();
         String ans = "";
         

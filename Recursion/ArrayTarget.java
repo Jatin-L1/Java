@@ -1,4 +1,3 @@
-package Recursion;
 
 public class ArrayTarget {
     public static int find(int[] arr  ,int target , int index) {

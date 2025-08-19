@@ -1,5 +1,3 @@
-package Recursion;
-
 public class SortedArray {
     public static boolean sorted(int[] arr , int index){
         if(index  == arr.length-1){

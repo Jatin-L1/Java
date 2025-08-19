@@ -16,10 +16,9 @@ public class leetcode {
                 return c;
             }
         }
-        return ' ';
-        
-        
+        return  ' ';
     }
+    
 
     public boolean detectCapitalUse(String word) {
         if (word.length() == 1) return true;

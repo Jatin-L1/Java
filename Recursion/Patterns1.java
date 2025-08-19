@@ -1,4 +1,3 @@
-package Recursion;
 
 public class Patterns1 {
     public static void triangle(int i , int j){
